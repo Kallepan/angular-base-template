@@ -1,19 +1,11 @@
-<mat-toolbar class="mat-elevation-z8 header" color="primary">
-  <span>
-    <div class="header-title" routerLink="/">{{title}}</div>
-  </span>
-  <span class="small-spacer"></span>
-  <mat-slide-toggle (change)="toggleTheme()" class="header-link" [matTooltip]="isDark ? 'Dark mode off': 'Dark mode on'" [checked]="isDark"></mat-slide-toggle>
-  <span class="wide-spacer"></span>
-</mat-toolbar>
-<div class="mat-typography app-frame mat-app-background">
-  <router-outlet></router-outlet>
-</div>
-<div class="footer">
-  <div class="copyright">
-    © <span>{{year}}</span> MVZ Dr. Eberhard und Partner
-  </div>
-  <div class="version">
-    Version: {{version}}
-  </div>
-</div>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav fixedInViewport="true" mode="over" [opened]="isSidenavOpen" (closed)="setSidenavState(false)">
+    DUMMY
+  </mat-sidenav>
+  <mat-sidenav-content class="app-frame">
+    <app-header (onToggleTheme)="toggleTheme()" (onToggleSidenav)="setSidenavState(true)"
+      [isDark]="isDark"></app-header>
+    <router-outlet></router-outlet>
+    <app-footer></app-footer>
+  </mat-sidenav-content>
+</mat-sidenav-container>

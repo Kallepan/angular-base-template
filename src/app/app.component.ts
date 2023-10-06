@@ -1,5 +1,4 @@
 import { Component, HostBinding, OnInit, inject } from '@angular/core';
-import { constants } from './config/constants';
 import { OverlayContainer } from '@angular/cdk/overlay';
 
 @Component({
@@ -8,14 +7,8 @@ import { OverlayContainer } from '@angular/cdk/overlay';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-
   // dependencies
   private _overlayContainer = inject(OverlayContainer);
-
-  // variables
-  title = constants.TITLE;
-  version = constants.VERSION;
-  year = new Date().getFullYear();
 
   // theme
   private _isDark = false;
@@ -39,8 +32,16 @@ export class AppComponent implements OnInit {
     }
   }
 
-  // lifecycle hooks
+  // sidenav
+  private _isSidenavOpen = false;
+  get isSidenavOpen() {
+    return this._isSidenavOpen;
+  }
+  setSidenavState(state: boolean) {
+    this._isSidenavOpen = state;
+  }
 
+  // lifecycle hooks
   ngOnInit(): void {
     console.log('ngOnInit');
   }

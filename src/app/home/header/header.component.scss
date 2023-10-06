@@ -1,0 +1,28 @@
+.small-spacer {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.wide-spacer {
+    flex: 1 1 auto;
+}
+
+.header {
+    .header-title {
+        text-align: center;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 32px;
+        text-decoration: none;
+        color: #fff;
+    }
+
+    .header-title:hover {
+        cursor: pointer;
+    }
+
+    .header-link {
+        text-align: center;
+        text-decoration: none;
+        font-weight: bold;
+    }
+}

@@ -1,0 +1,26 @@
+.footer {
+    background-color: rgba($color: black, $alpha: 0.8);
+    bottom: 0;
+    width: 100%;
+    height: 25px;
+    margin: 0px;
+    padding-left: 10px;
+    color: white;
+    overflow: hidden;
+    position: fixed;
+    white-space: nowrap;
+    z-index: 10;
+
+    .copyright {
+        display: inline-block;
+        margin-top: 5px;
+    }
+
+    .version {
+        float:right;
+        display: inline;
+        position: absolute;
+        right: 30px; 
+        margin-top: 5px;
+    }
+}
