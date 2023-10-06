@@ -1,4 +1,4 @@
-# Angular Base
+# Angular Base Template
 
 This project is a template for Angular projects. It was created using the Angular CLI [Angular CLI](https://angular.io/cli) version 16.2.5.
 
