@@ -9,6 +9,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     git \
     vim \
     curl \
+    sudo \
     wget \
     unzip \
     && apt-get clean \
