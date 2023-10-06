@@ -9,7 +9,7 @@ import { HomeModule } from './home/home.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -22,3 +22,6 @@ import { HomeModule } from './home/home.module';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+// TODO: CDK Media Queries
