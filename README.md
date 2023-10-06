@@ -1,6 +1,6 @@
-# AngularBase
+# Angular Base
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.5.
+This project is a template for Angular projects. It was created using the Angular CLI [Angular CLI](https://angular.io/cli) version 16.2.5.
 
 ## Development server
 
