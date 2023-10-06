@@ -7,7 +7,9 @@ export type ExampleCustomData = {
     name: string;
 }
 
-@Injectable()
+@Injectable({
+    providedIn: 'any'
+})
 export class ExampleTableService<ExampleCustomData> extends AbstractTableService<ExampleCustomData> {
     tableData$ = this.getAll();
 

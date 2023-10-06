@@ -5,6 +5,7 @@ import {
   NgModule,
 } from '@angular/core';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from 'src/app/material/material.module';
 
 @Component({
@@ -17,13 +18,13 @@ export class SearchBarComponent {
   @Input() control: FormControl;
 
   updateValue(event: any) {
-    this.control?.setValue(event.value);
+    this.control.setValue(event.value);
   }
 }
 
 @NgModule({
   declarations: [SearchBarComponent],
   exports: [SearchBarComponent],
-  imports: [MaterialModule, FormsModule, ReactiveFormsModule],
+  imports: [MaterialModule, FormsModule, ReactiveFormsModule, BrowserAnimationsModule],
 })
 export class SearchBarComponentModule {}
