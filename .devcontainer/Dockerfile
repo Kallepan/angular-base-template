@@ -23,5 +23,4 @@ RUN npm install -g ${NODE_MODULES} \
 RUN ng config -g cli.analytics false && \
  ng config -g cli.completion.prompted true
 
-EXPOSE 4200
-EXPOSE 9876
+EXPOSE 4200 9876
