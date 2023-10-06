@@ -197,3 +197,15 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   display: flex;
   padding: 1rem;
 }
+
+// Snackbar
+.warn-snackbar {
+  --mdc-snackbar-container-color: #812121;
+  --mdc-snackbar-supporting-text-color: white;
+  --mat-mdc-snack-bar-button-color: white;
+}
+.info-snackbar {
+  --mdc-snackbar-container-color: #313131;
+  --mdc-snackbar-supporting-text-color: white;
+  --mat-mdc-snack-bar-button-color: white;
+}
