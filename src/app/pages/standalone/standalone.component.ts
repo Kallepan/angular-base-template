@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MaterialModule } from 'src/app/material/material.module';
+import { CanResponsiveDirective } from 'src/app/shared/directives/can-responsive.directive';
 
 @Component({
   standalone: true,
@@ -9,6 +10,11 @@ import { MaterialModule } from 'src/app/material/material.module';
   styleUrls: ['./standalone.component.scss'],
   imports: [
     MaterialModule,
+  ],
+  hostDirectives: [
+    {
+      directive: CanResponsiveDirective,
+    }
   ]
 })
 export class StandaloneComponent {

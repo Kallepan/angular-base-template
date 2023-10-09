@@ -1,9 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { AfterViewInit, ChangeDetectionStrategy, Component, Input, NgModule, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component, Input, NgModule, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from 'src/app/material/material.module';
 
 export type ColumnsSchema = {
@@ -18,7 +19,9 @@ export type ColumnsSchema = {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DataTableComponent<T> implements OnInit, AfterViewInit {
-  @Input() data: T[] = [];
+  @Input() set data(data: T[]) {
+    this.dataSource.data = data;
+  }
   @Input() set filter(searchTerm: string) {
     this.dataSource.filter = searchTerm.trim().toLowerCase();
   }
@@ -33,9 +36,8 @@ export class DataTableComponent<T> implements OnInit, AfterViewInit {
   
   ngOnInit(): void {
     this.displayedColumns = this.schema.map((column) => column.key);
-    this.dataSource = new MatTableDataSource<T>(this.data);
   }
-
+  
   ngAfterViewInit(): void {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;

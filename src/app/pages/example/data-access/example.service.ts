@@ -7,7 +7,9 @@ export type ExampleData = {
     name: string;
 }
 
-@Injectable()
+@Injectable({
+    providedIn: 'any'
+})
 export class ExampleTableService<ExampleData> extends AbstractTableService<ExampleData> {
     tableSchema = [
         {

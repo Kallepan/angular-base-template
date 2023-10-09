@@ -8,7 +8,6 @@ describe('StandaloneComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [StandaloneComponent]
     });
     fixture = TestBed.createComponent(StandaloneComponent);
     component = fixture.componentInstance;
