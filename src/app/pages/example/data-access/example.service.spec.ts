@@ -1,10 +1,10 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ExampleCustomData, ExampleTableService } from './example-table.service';
+import { ExampleData, ExampleTableService } from './example.service';
 import { ExampleModule } from '../example.module';
 
 describe('ExampleTableService', () => {
-  let service: ExampleTableService<ExampleCustomData>;
+  let service: ExampleTableService<ExampleData>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
