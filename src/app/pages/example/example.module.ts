@@ -5,6 +5,7 @@ import { SearchBarComponentModule } from 'src/app/shared/ui/search-bar/search-ba
 import { ExampleComponent } from './example.component';
 import { DataTableComponentModule } from 'src/app/shared/ui/data-table/data-table.component';
 import { MaterialModule } from 'src/app/material/material.module';
+import { ExampleRoutingModule } from './example-routing.module';
 
 @NgModule({
   imports: [
@@ -13,6 +14,7 @@ import { MaterialModule } from 'src/app/material/material.module';
     SearchBarComponentModule,
     DataTableComponentModule,
     MaterialModule,
+    ExampleRoutingModule,
   ],
   declarations: [ExampleComponent],
 })

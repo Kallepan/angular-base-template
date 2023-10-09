@@ -1,8 +1,8 @@
 import { Injectable } from "@angular/core";
-import { Observable, of } from "rxjs";
+import { of } from "rxjs";
 import { AbstractTableService } from "src/app/shared/page-base/table-page/data-table.service";
 
-export type ExampleCustomData = {
+export type ExampleData = {
     id: number;
     name: string;
 }
@@ -10,10 +10,20 @@ export type ExampleCustomData = {
 @Injectable({
     providedIn: 'any'
 })
-export class ExampleTableService<ExampleCustomData> extends AbstractTableService<ExampleCustomData> {
+export class ExampleTableService<ExampleData> extends AbstractTableService<ExampleData> {
+    tableSchema = [
+        {
+            key: 'id',
+            label: 'ID'
+        },
+        {
+            key: 'name',
+            label: 'Name'
+        },
+    ];
     tableData$ = this.getAll();
 
-    getAll(): Observable<ExampleCustomData[]> {
+    getAll() {
         return of([
             {
                 id: 1,
@@ -23,6 +33,6 @@ export class ExampleTableService<ExampleCustomData> extends AbstractTableService
                 id: 2,
                 name: 'TEST2'
             },
-        ] as ExampleCustomData[]);
+        ] as ExampleData[]);
     }
 }

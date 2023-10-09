@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -5,7 +6,6 @@ import {
   NgModule,
 } from '@angular/core';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from 'src/app/material/material.module';
 
 @Component({
@@ -25,6 +25,6 @@ export class SearchBarComponent {
 @NgModule({
   declarations: [SearchBarComponent],
   exports: [SearchBarComponent],
-  imports: [MaterialModule, FormsModule, ReactiveFormsModule, BrowserAnimationsModule],
+  imports: [CommonModule, MaterialModule, FormsModule, ReactiveFormsModule],
 })
 export class SearchBarComponentModule {}

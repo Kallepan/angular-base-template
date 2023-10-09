@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { AbstractTableService } from 'src/app/shared/page-base/table-page/data-table.service';
-import { ExampleTableService } from './data-access/example-table.service';
+import { ExampleData, ExampleTableService } from './data-access/example.service';
 
 @Component({
   selector: 'app-example',
@@ -14,5 +14,5 @@ import { ExampleTableService } from './data-access/example-table.service';
   ]
 })
 export class ExampleComponent {
-  public tableService = inject(AbstractTableService);
+  public tableService = inject(AbstractTableService<ExampleData>);
 }
