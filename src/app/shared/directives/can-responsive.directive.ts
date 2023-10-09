@@ -16,7 +16,6 @@ export class CanResponsiveDirective implements OnInit, OnDestroy {
     this._tableBreakPointSubscription = this._responsive.observe(Breakpoints.Tablet)
       .subscribe(result => {
         this.isTablet = result.matches;
-        console.log('is-tablet', this.isTablet);
       });
   }
 

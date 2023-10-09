@@ -38,9 +38,8 @@ export class ErrorCatchingInterceptor implements HttpInterceptor {
         const errorMessage = error.error;
 
         // User Feedback 
-        this._notificationService.infoMessage
-        console.log(error);
-
+        this._notificationService.infoMessage(errorMessage);
+        
         // Rethrow error
         const customError = {
           status: error.status,
