@@ -6,7 +6,7 @@ import { OverlayContainer } from '@angular/cdk/overlay';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   // dependencies
   private _overlayContainer = inject(OverlayContainer);
 
@@ -36,8 +36,7 @@ export class AppComponent implements OnInit {
   // lifecycle hooks
   constructor() {
     effect(() => {
-      const isDark = this._isDark();
-      if (isDark) {
+      if (this._isDark()) {
         this._overlayContainer.getContainerElement().classList.remove('theme-dark');
         this._overlayContainer.getContainerElement().classList.add('theme-light');
       } else {
@@ -45,9 +44,5 @@ export class AppComponent implements OnInit {
         this._overlayContainer.getContainerElement().classList.add('theme-dark');
       }
     });
-  }
-
-  ngOnInit(): void {
-    
   }
 }

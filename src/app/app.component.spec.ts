@@ -1,4 +1,4 @@
-import { TestBed, flush } from '@angular/core/testing';
+import { TestBed, fakeAsync, flush } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { constants } from './config/constants';
@@ -6,15 +6,24 @@ import { AppModule } from './app.module';
 
 import { TestbedHarnessEnvironment } from '@angular/cdk/testing/testbed';
 import { MatSidenavHarness } from '@angular/material/sidenav/testing';
+import { OverlayContainer } from '@angular/cdk/overlay';
 
 describe('AppComponent', () => {
-  beforeEach(() => TestBed.configureTestingModule({
-    imports: [
-      AppModule,
-      RouterTestingModule
-    ],
-    declarations: [AppComponent]
-  }));
+  let overlayContainer: OverlayContainer;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      imports: [
+        AppModule,
+        RouterTestingModule
+      ],
+      declarations: [AppComponent],
+      providers: [
+        OverlayContainer,
+      ]
+    });
+    overlayContainer = TestBed.inject(OverlayContainer);
+  });
 
   it('should create the app', () => {
     const fixture = TestBed.createComponent(AppComponent);
@@ -42,6 +51,26 @@ describe('AppComponent', () => {
     app.toggleTheme();
     expect(app.themeMode).toEqual('theme-dark');
   });
+
+  // Check overlay container
+  it('theme should match boolean', fakeAsync(() => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const app = fixture.componentInstance;
+
+    expect(overlayContainer.getContainerElement().classList).toContain('theme-dark');
+
+    // Toggle theme
+    app.toggleTheme();
+    fixture.detectChanges();
+
+    // Wait for the animation to finish
+    flush();
+
+    // Check if the theme is now light
+    expect(overlayContainer.getContainerElement().classList).toContain('theme-light');
+
+  }));
 
   // Test open sidenav
   it('should open sidenav', async () => {
