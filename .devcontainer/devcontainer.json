@@ -28,7 +28,9 @@
 			"extensions": [
 				"Angular.ng-template",
 				"GitHub.copilot",
-				"DavidAnson.vscode-markdownlint"
+				"DavidAnson.vscode-markdownlint",
+				"eamodio.gitlens",
+				"ms-azuretools.vscode-docker"
 			]
 		}
 	}
