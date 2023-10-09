@@ -1,7 +1,8 @@
 import { Directive, HostBinding, Input } from '@angular/core';
 
 @Directive({
-  selector: '[canAppearance]'
+  selector: '[canAppearance]',
+  standalone: true,
 })
 export class CanAppearanceDirective {
   @Input()
