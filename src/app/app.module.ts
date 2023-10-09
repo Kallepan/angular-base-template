@@ -22,6 +22,3 @@ import { HomeModule } from './home/home.module';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
-
-// TODO: CDK Media Queries

@@ -22,21 +22,11 @@ export class NotificationService {
   private _message = new Subject<Message>();
 
   infoMessage(message: string) {
-    this._snackBar.open(message, 'OK', {
-      duration: 5000,
-      horizontalPosition: this._horizontalPosition,
-      verticalPosition: this._verticalPosition,
-      panelClass: ['info-snackbar']
-    });
+    this._message.next({ message, type: 'info' });
   }
 
   warnMessage(message: string) {
-    this._snackBar.open(message, 'OK', {
-      duration: 5000,
-      horizontalPosition: this._horizontalPosition,
-      verticalPosition: this._verticalPosition,
-      panelClass: ['warn-snackbar']
-    });
+    this._message.next({ message, type: 'warn' });
   }
 
   private _getSnackBarDelay(message: Message) {
@@ -52,18 +42,12 @@ export class NotificationService {
   constructor() {
     this._message.pipe(
       concatMap(message => this._getSnackBarDelay(message)),
-      tap(message => {
-        switch (message.type) {
-          case 'info':
-            this.infoMessage(message.message);
-            break;
-          case 'warn':
-            this.warnMessage(message.message);
-            break;
-          default:
-            break;
-        }
-      }),
-    ).subscribe(); // This is technically a memory leak, but it's a singleton service so it's fine
+    ).subscribe(res => {
+      this._snackBar.open(res.message, 'Dismiss', {
+        duration: 3000,
+        horizontalPosition: this._horizontalPosition,
+        verticalPosition: this._verticalPosition,
+      });
+    }); // This is technically a memory leak, but it's a singleton service so it's fine
   }
 }
