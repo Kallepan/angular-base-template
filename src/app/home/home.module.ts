@@ -6,8 +6,6 @@ import { HeaderComponent } from './header/header.component';
 import { MaterialModule } from '../material/material.module';
 import { AppRoutingModule } from '../app-routing.module';
 
-
-
 @NgModule({
   declarations: [
     HomeComponent,
