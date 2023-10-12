@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SearchBarComponent, SearchBarComponentModule } from './search-bar.component';
+import { SearchBarComponent } from './search-bar.component';
 import { FormControl } from '@angular/forms';
 import { AppModule } from 'src/app/app.module';
 
@@ -10,8 +10,7 @@ describe('SearchBarComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [SearchBarComponent],
-      imports: [SearchBarComponentModule, AppModule],
+      imports: [AppModule, SearchBarComponent],
     });
     fixture = TestBed.createComponent(SearchBarComponent);
     const control = new FormControl();
