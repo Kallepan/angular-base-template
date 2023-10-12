@@ -4,6 +4,15 @@ import { HomeComponent } from './home/home/home.component';
 
 // Add routes with labels to display in the menu
 const routes: Routes = [
+  {
+    path: 'state/articles/:id',
+    loadComponent: () => import('./patterns/state/article-detail.component').then(m => m.default)
+  },
+  {
+    path: 'state/articles',
+    loadComponent: () => import('./patterns/state/state.component').then(m => m.default),
+    data: { label: 'State' }
+  },
   { 
     path: 'composition', 
     loadComponent: () => import('./patterns/composition/composition.component').then(m => m.CompositionComponent),

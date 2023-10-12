@@ -1,10 +1,10 @@
 import { Component, inject } from '@angular/core';
-import { AbstractTableService } from 'src/app/shared/page-base/table-page/data-table.service';
 import { CompositionData, CompositionTableService } from './data-access/composition';
 import { CompositionModule } from './composition.module';
 import { SearchBarComponentModule } from 'src/app/shared/ui/search-bar/search-bar.component';
 import { DataTableComponentModule } from 'src/app/shared/ui/data-table/data-table.component';
 import { CommonModule } from '@angular/common';
+import { AbstractTableService } from 'src/app/shared/data-access/data-table.service';
 
 @Component({
   selector: 'app-composition',
