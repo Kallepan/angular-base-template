@@ -4,8 +4,7 @@ import { constants } from 'src/app/config/constants';
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.scss'],
-  encapsulation: ViewEncapsulation.ShadowDom,
+  styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent {
   version = constants.VERSION;

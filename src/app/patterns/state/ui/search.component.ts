@@ -13,6 +13,7 @@ import { FormControl, ReactiveFormsModule } from "@angular/forms";
         box-sizing: border-box;
         padding: 1rem;
         font-size: 1.3em;
+        background-color: var(--bg-color);
       }
     `,
   ],

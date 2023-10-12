@@ -31,7 +31,6 @@ import { ListComponent } from "./ui/list.component";
     `
       :host {
         display: block;
-        background-color: #ecf0f1;
         padding: 2rem;
       }
 

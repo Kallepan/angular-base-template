@@ -5,6 +5,5 @@ import { constants } from 'src/app/config/constants';
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
-  encapsulation: ViewEncapsulation.ShadowDom,
 })
 export class HomeComponent {  }

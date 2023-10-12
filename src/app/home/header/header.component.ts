@@ -5,8 +5,7 @@ import { constants } from 'src/app/config/constants';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss'],
-  encapsulation: ViewEncapsulation.ShadowDom,
+  styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
   private _router = inject(Router);

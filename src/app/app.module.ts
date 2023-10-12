@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeModule } from './home/home.module';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     BrowserAnimationsModule,
     HomeModule,
     MatSidenavModule,
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

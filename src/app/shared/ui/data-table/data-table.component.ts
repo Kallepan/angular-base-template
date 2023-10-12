@@ -1,11 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { AfterViewInit, ChangeDetectionStrategy, Component, Input, NgModule, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
-import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
-import { MatTableDataSource } from '@angular/material/table';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from 'src/app/material/material.module';
+import { AfterViewInit, ChangeDetectionStrategy, Component, Input, OnInit, ViewChild } from '@angular/core';
+import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
+import { MatSort, MatSortModule } from '@angular/material/sort';
+import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 
 export type ColumnsSchema = {
   key: string,
@@ -17,6 +14,13 @@ export type ColumnsSchema = {
   templateUrl: './data-table.component.html',
   styleUrls: ['./data-table.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [
+    CommonModule,
+    MatSortModule,
+    MatPaginatorModule,
+    MatTableModule,
+  ]
 })
 export class DataTableComponent<T> implements OnInit, AfterViewInit {
   @Input() set data(data: T[]) {
@@ -43,10 +47,3 @@ export class DataTableComponent<T> implements OnInit, AfterViewInit {
     this.dataSource.sort = this.sort;
   }
 }
-
-@NgModule({
-  declarations: [DataTableComponent],
-  exports: [DataTableComponent],
-  imports: [CommonModule, MaterialModule, ReactiveFormsModule],
-})
-export class DataTableComponentModule {}

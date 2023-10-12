@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DataTableComponent, DataTableComponentModule } from './data-table.component';
+import { DataTableComponent } from './data-table.component';
 import { AppModule } from 'src/app/app.module';
 
 type MockType = {
@@ -14,8 +14,7 @@ describe('DataTableComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [DataTableComponentModule, AppModule],
-      declarations: [DataTableComponent]
+      imports: [DataTableComponent, AppModule],
     });
     fixture = TestBed.createComponent(DataTableComponent<MockType>);
     component = fixture.componentInstance;
