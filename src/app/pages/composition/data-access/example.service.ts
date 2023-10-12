@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { of } from "rxjs";
 import { AbstractTableService } from "src/app/shared/page-base/table-page/data-table.service";
 
-export type ExampleData = {
+export type CompositionData = {
     id: number;
     name: string;
 }
@@ -10,7 +10,7 @@ export type ExampleData = {
 @Injectable({
     providedIn: 'any'
 })
-export class ExampleTableService<ExampleData> extends AbstractTableService<ExampleData> {
+export class CompositionTableService<CompositionData> extends AbstractTableService<CompositionData> {
     tableSchema = [
         {
             key: 'id',
@@ -33,6 +33,6 @@ export class ExampleTableService<ExampleData> extends AbstractTableService<Examp
                 id: 2,
                 name: 'TEST2'
             },
-        ] as ExampleData[]);
+        ] as CompositionData[]);
     }
 }
