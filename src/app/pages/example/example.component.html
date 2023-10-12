@@ -1,9 +1,0 @@
-<app-search-bar [control]="tableService.searchControl"></app-search-bar>
-
-<app-data-table
-    *ngIf="{data: tableService.tableData$ | async, search: tableService.tableSearch$ | async} as vm;"
-    [data]="vm.data || []"
-    [filter]="vm.search || ''"
-    [schema]="tableService.tableSchema"
-
-></app-data-table>

@@ -5,7 +5,7 @@ import {
   Input,
   NgModule,
 } from '@angular/core';
-import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from 'src/app/material/material.module';
 
 @Component({
@@ -25,6 +25,6 @@ export class SearchBarComponent {
 @NgModule({
   declarations: [SearchBarComponent],
   exports: [SearchBarComponent],
-  imports: [CommonModule, MaterialModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, MaterialModule, ReactiveFormsModule],
 })
 export class SearchBarComponentModule {}

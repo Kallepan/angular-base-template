@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { AfterViewInit, ChangeDetectionStrategy, Component, Input, NgModule, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
@@ -47,6 +47,6 @@ export class DataTableComponent<T> implements OnInit, AfterViewInit {
 @NgModule({
   declarations: [DataTableComponent],
   exports: [DataTableComponent],
-  imports: [CommonModule, MaterialModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, MaterialModule, ReactiveFormsModule],
 })
 export class DataTableComponentModule {}

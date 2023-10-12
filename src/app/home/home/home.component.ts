@@ -6,7 +6,4 @@ import { constants } from 'src/app/config/constants';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent {
-
-  title = constants.TITLE;
-}
+export class HomeComponent {  }

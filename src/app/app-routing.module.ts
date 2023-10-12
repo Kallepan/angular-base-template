@@ -2,9 +2,32 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home/home.component';
 
+// Add routes with labels to display in the menu
 const routes: Routes = [
-  { path: 'example', loadChildren: () => import('./pages/example/example.module').then(m => m.ExampleModule) },
-  { path: 'standalone', loadComponent: () => import('./pages/standalone/standalone.component').then(m => m.StandaloneComponent) },
+  {
+    path: 'state/articles/:id',
+    loadComponent: () => import('./patterns/state/article-detail.component').then(m => m.default)
+  },
+  {
+    path: 'state/articles',
+    loadComponent: () => import('./patterns/state/state.component').then(m => m.default),
+    data: { label: 'State' }
+  },
+  { 
+    path: 'composition', 
+    loadComponent: () => import('./patterns/composition/composition.component').then(m => m.CompositionComponent),
+    data: { label: 'Composition' }
+  },
+  { 
+    path: 'standalone', 
+    loadComponent: () => import('./patterns/standalone/standalone.component').then(m => m.StandaloneComponent), 
+    data: { label: 'Standalone' } 
+  },
+  { 
+    path: 'bridge', 
+    loadComponent: () => import('./patterns/bridge/view.component').then(m => m.ViewComponent), 
+    data: { label: 'Bridge' } 
+  },
   { path: '', component: HomeComponent },
   { path: 'home', redirectTo: '' },
   { path: '**', redirectTo: '' },
