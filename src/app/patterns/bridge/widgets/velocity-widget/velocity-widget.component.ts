@@ -1,4 +1,4 @@
-import { Widget } from './../widget.interface';
+import { Widget } from '../widget.interface';
 import { Component } from '@angular/core';
 import { WIDGET } from '../widget.token';
 
@@ -8,6 +8,7 @@ import { WIDGET } from '../widget.token';
     styleUrls: ['./velocity-widget.component.scss'],
     providers: [
         {
+            // Note: ForwardRef is not needed here because @Component is 'transpiled' after the class.
             provide: WIDGET,
             useExisting: VelocityWidgetComponent,
         },

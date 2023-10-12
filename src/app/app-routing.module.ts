@@ -6,17 +6,17 @@ import { HomeComponent } from './home/home/home.component';
 const routes: Routes = [
   { 
     path: 'composition', 
-    loadComponent: () => import('./pages/composition/composition.component').then(m => m.CompositionComponent),
+    loadComponent: () => import('./patterns/composition/composition.component').then(m => m.CompositionComponent),
     data: { label: 'Composition' }
   },
   { 
     path: 'standalone', 
-    loadComponent: () => import('./pages/standalone/standalone.component').then(m => m.StandaloneComponent), 
+    loadComponent: () => import('./patterns/standalone/standalone.component').then(m => m.StandaloneComponent), 
     data: { label: 'Standalone' } 
   },
   { 
     path: 'bridge', 
-    loadComponent: () => import('./pages/bridge/view.component').then(m => m.ViewComponent), 
+    loadComponent: () => import('./patterns/bridge/view.component').then(m => m.ViewComponent), 
     data: { label: 'Bridge' } 
   },
   { path: '', component: HomeComponent },

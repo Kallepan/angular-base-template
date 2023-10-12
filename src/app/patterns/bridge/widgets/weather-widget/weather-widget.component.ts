@@ -1,4 +1,4 @@
-import { WIDGET } from './../widget.token';
+import { WIDGET } from '../widget.token';
 import { Component } from '@angular/core';
 import { Widget } from '../widget.interface';
 
@@ -8,6 +8,7 @@ import { Widget } from '../widget.interface';
   styleUrls: ['./weather-widget.component.scss'],
   providers: [
     {
+      // Note: ForwardRef is not needed here because @Component is 'transpiled' after the class.
       provide: WIDGET,
       useExisting: WeatherWidgetComponent,
     },
