@@ -1,22 +1,14 @@
-import { CommonModule } from '@angular/common';
 import { Component, OnInit, inject } from '@angular/core';
-import { AppModule } from 'src/app/app.module';
-import { MaterialModule } from 'src/app/material/material.module';
 import { CanResponsiveDirective } from 'src/app/shared/directives/can-responsive.directive';
 import { NotificationService } from 'src/app/shared/ui/notification/notification.service';
 
 @Component({
   standalone: true,
-  // signals: true,
+  // signals: true, // this is available in Angular 17+
   selector: 'app-standalone',
-  templateUrl: './standalone.component.html',
-  styleUrls: ['./standalone.component.scss'],
+  template: `<p>standalone works!</p>`,
   providers: [
     NotificationService
-  ],
-  imports: [
-    CommonModule,
-    MaterialModule,
   ],
   hostDirectives: [
     {

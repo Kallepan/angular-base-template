@@ -17,4 +17,10 @@ describe('StandaloneComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  // should contain a <p> tag
+  it('should contain a <p> tag', () => {
+    const compiled = fixture.nativeElement;
+    expect(compiled.querySelector('p')).toBeTruthy();
+  });
 });
