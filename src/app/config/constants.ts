@@ -21,4 +21,19 @@ export class constants {
 
     public static TITLE = 'Angular Base Template';
     public static VERSION = '0.1.0';
+
+    public static ROUTES = [
+        {
+            label: 'Bridge',
+            path: '/bridge',
+        },
+        {
+            label: 'Standalone',
+            path: '/standalone',
+        },
+        {
+            label: 'Composition',
+            path: '/composition',
+        },
+    ];
 }

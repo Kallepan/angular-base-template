@@ -12,6 +12,8 @@ export class HeaderComponent {
   @Output() onToggleTheme = new EventEmitter<void>();
   @Output() onToggleSidenav = new EventEmitter<void>();
 
+  routes = constants.ROUTES;
+
   toggleTheme() {
     this.onToggleTheme.emit();
   }

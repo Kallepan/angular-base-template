@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { MaterialModule } from '../material/material.module';
+import { AppRoutingModule } from '../app-routing.module';
 
 
 
@@ -16,6 +17,7 @@ import { MaterialModule } from '../material/material.module';
   imports: [
     CommonModule,
     MaterialModule,
+    AppRoutingModule,
   ],
   exports: [
     HomeComponent,

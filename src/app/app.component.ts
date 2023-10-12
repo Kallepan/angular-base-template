@@ -1,4 +1,4 @@
-import { Component, HostBinding, OnInit, effect, inject, signal } from '@angular/core';
+import { Component, HostBinding, effect, inject, signal } from '@angular/core';
 import { OverlayContainer } from '@angular/cdk/overlay';
 
 @Component({
