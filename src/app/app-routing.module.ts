@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home/home.component';
 const routes: Routes = [
   { path: 'composition', loadChildren: () => import('./pages/composition/composition.module').then(m => m.CompositionModule) },
   { path: 'standalone', loadComponent: () => import('./pages/standalone/standalone.component').then(m => m.StandaloneComponent) },
+  { path: 'bridge', loadComponent: () => import('./pages/bridge/view.component').then(m => m.ViewComponent) },
   { path: '', component: HomeComponent },
   { path: 'home', redirectTo: '' },
   { path: '**', redirectTo: '' },
