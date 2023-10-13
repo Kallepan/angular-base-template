@@ -1,0 +1,11 @@
+<mat-sidenav-container>
+    <mat-sidenav #sidenav fixedInViewport="true" mode="over" [opened]="isSidenavOpen" (closed)="setSidenavState(false)">
+        DUMMY
+    </mat-sidenav>
+    <mat-sidenav-content class="app-frame">
+        <app-header (onToggleTheme)="toggleTheme()" (onToggleSidenav)="setSidenavState(true)"
+            [isDark]="isDark"></app-header>
+            <router-outlet></router-outlet>
+        <app-footer></app-footer>
+    </mat-sidenav-content>
+</mat-sidenav-container>

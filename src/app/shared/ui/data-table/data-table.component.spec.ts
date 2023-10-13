@@ -1,8 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DataTableComponent } from './data-table.component';
-import { AppModule } from 'src/app/app.module';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 type MockType = {
   value: string;
   id: number;
@@ -14,7 +13,10 @@ describe('DataTableComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [DataTableComponent, AppModule],
+      imports: [
+        DataTableComponent,
+        BrowserAnimationsModule
+      ],
     });
     fixture = TestBed.createComponent(DataTableComponent<MockType>);
     component = fixture.componentInstance;

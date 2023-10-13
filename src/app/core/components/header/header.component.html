@@ -1,0 +1,17 @@
+<mat-toolbar class="mat-elevation-z8 header" color="primary">
+    <button mat-mini-fab (click)="toggleSidenav()"><mat-icon>menu</mat-icon></button>
+    <span class="small-spacer"></span>
+    <span>
+      <div class="header-title" routerLink="/">{{title}}</div>
+    </span>
+    <span class="small-spacer"></span>
+    <ng-container *ngFor="let route of routes">
+      <a mat-raised-button color="accent" [routerLink]="route.path" class="header-link" routerLinkActive="is-active">
+        {{route.label}}
+      </a>
+      <span class="small-spacer"></span>
+    </ng-container>
+    <mat-slide-toggle (change)="toggleTheme()" class="header-link" matTooltip="Toggle dark mode"
+      [checked]="isDark"></mat-slide-toggle>
+    <span class="wide-spacer"></span>
+  </mat-toolbar>
