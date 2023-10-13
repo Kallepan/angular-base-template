@@ -3,20 +3,26 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HeaderComponent } from './header.component';
 import { Router } from '@angular/router';
 import { By } from '@angular/platform-browser';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
   let fixture: ComponentFixture<HeaderComponent>;
+  let router: Router;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [HeaderComponent],
+      imports: [
+        HeaderComponent,
+        RouterTestingModule,
+      ],
       providers: [
         Router,
       ]
     });
     fixture = TestBed.createComponent(HeaderComponent);
     component = fixture.componentInstance;
+    router = TestBed.inject(Router);
     fixture.detectChanges();
   });
 

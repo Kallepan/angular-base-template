@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { CompositionComponent } from './composition.component';
-import { AppModule } from 'src/app/app.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('CompositionComponent', () => {
   let component: CompositionComponent;
@@ -8,7 +8,7 @@ describe('CompositionComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [AppModule, CompositionComponent],
+      imports: [CompositionComponent, BrowserAnimationsModule],
     });
     fixture = TestBed.createComponent(CompositionComponent);
     component = fixture.componentInstance;
