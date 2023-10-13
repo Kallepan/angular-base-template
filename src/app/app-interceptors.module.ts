@@ -1,7 +1,7 @@
 import { Injectable, inject } from "@angular/core";
 import { HttpInterceptor, HttpEvent, HttpRequest, HttpHandler, HttpErrorResponse } from '@angular/common/http';
 import { catchError, Observable, throwError } from 'rxjs';
-import { constants } from "./config/constants";
+import { constants } from "./core/constants/constants";
 import { NotificationService } from "./shared/ui/notification/notification.service";
 
 @Injectable()

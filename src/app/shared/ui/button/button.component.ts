@@ -2,8 +2,8 @@ import {
   ChangeDetectionStrategy,
   Component
 } from '@angular/core';
-import { CanDisableDirective } from 'src/app/shared/directives/can-disable.directive';
-import { CanAppearanceDirective } from '../../directives/can-appearance.directive';
+import { CanAppearanceDirective } from '@app/shared/directives/can-appearance.directive';
+import { CanDisableDirective } from '@app/shared/directives/can-disable.directive';
 
 @Component({
   selector: 'app-button',

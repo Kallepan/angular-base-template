@@ -1,7 +1,7 @@
 import { TestBed, fakeAsync, flush } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
-import { constants } from './config/constants';
+import { constants } from './core/constants/constants';
 import { AppModule } from './app.module';
 
 import { TestbedHarnessEnvironment } from '@angular/cdk/testing/testbed';
