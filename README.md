@@ -3,6 +3,16 @@
 This project is a template for Angular projects. It was created using the Angular CLI [Angular CLI](https://angular.io/cli) version 16.2.5.
 It contains several design pattern examples see [here](src/app/patterns).
 
+## Usage
+
+```bash
+git clone $URL
+cd $PROJECT
+```
+- Rename Angular Base Template to project name
+- Rename angular-base-template to project name
+- Remove unsused parts of the project
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
