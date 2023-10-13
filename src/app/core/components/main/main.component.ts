@@ -4,7 +4,7 @@ import { Component, HostBinding, effect, inject, signal } from '@angular/core';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { HeaderComponent } from '../header/header.component';
 import { FooterComponent } from '../footer/footer.component';
-import { AppRoutingModule } from '@app/app-routing.module';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-main',
@@ -16,7 +16,7 @@ import { AppRoutingModule } from '@app/app-routing.module';
     MatSidenavModule,
     HeaderComponent,
     FooterComponent,
-    AppRoutingModule,
+    RouterModule,
   ],
 })
 export class MainComponent {

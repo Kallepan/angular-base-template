@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
-import { MainComponent } from './core/components/main/main.component';
 
 // Add routes with labels to display in the menu
 const routes: Routes = [

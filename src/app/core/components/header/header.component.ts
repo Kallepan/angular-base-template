@@ -4,7 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { Router, RouterLink } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { constants } from '@app/core/constants/constants';
 
 @Component({
@@ -18,7 +18,7 @@ import { constants } from '@app/core/constants/constants';
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
-    RouterLink,
+    RouterModule,
   ],
 })
 export class HeaderComponent {
