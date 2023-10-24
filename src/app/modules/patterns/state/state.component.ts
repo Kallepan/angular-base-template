@@ -17,7 +17,7 @@ import { ListComponent } from "./ui/list.component";
       <p *ngIf="service.status() === 'loading'">Loading...</p>
       <div *ngIf="service.status() === 'error'">
         <p>{{ service.error() }}</p>
-        <button (click)="service.retry$.next()">Retry</button>
+        <button (click)="service.retry$.next(null)">Retry</button>
       </div>
     </div>
 
