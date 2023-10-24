@@ -6,11 +6,8 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import { fakeAsync, TestBed, inject, flush, tick, ComponentFixture } from '@angular/core/testing';
-import { Component, Injectable } from '@angular/core';
-import { Subscription } from 'rxjs';
-import { skip, take } from 'rxjs/operators';
-import { BreakpointObserver, BreakpointState, Breakpoints, LayoutModule, MediaMatcher } from '@angular/cdk/layout';
+import { fakeAsync, TestBed, tick, ComponentFixture } from '@angular/core/testing';
+import { Component } from '@angular/core';
 import { CanResponsiveDirective } from './can-responsive.directive';
 
 // Create Dummy Component for testing
