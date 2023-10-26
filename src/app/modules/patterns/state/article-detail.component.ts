@@ -1,5 +1,5 @@
 import { Component, inject } from "@angular/core";
-import { ArticleDetailService } from "./data-access/article-detail.service";
+import { ArticleDetailService } from "./services/article-detail.service";
 import { CommonModule } from "@angular/common";
 
 @Component({

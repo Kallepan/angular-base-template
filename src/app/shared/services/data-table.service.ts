@@ -1,7 +1,7 @@
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { debounceTime, filter } from 'rxjs/operators';
-import { ColumnsSchema } from '../ui/data-table/data-table.component';
+import { ColumnsSchema } from '../components/data-table/data-table.component';
 
 export abstract class AbstractTableService<T> {
   searchControl: FormControl = new FormControl('');

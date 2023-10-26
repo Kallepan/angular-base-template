@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { AbstractTableService } from "@app/shared/data-access/data-table.service";
+import { AbstractTableService } from "@app/shared/services/data-table.service";
 import { of } from "rxjs";
 
 export type CompositionData = {

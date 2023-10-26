@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 
 import { NotificationService } from './notification.service';
-import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 const mockSnackBar = jasmine.createSpyObj('MatSnackBar',['open']);
 

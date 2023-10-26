@@ -1,9 +1,9 @@
 import { Component, inject } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { ArticlesService } from "./data-access/article.service";
-import { PaginationComponent } from "./ui/pagination.component";
-import { SearchComponent } from "./ui/search.component";
-import { ListComponent } from "./ui/list.component";
+import { ArticlesService } from "./services/article.service";
+import { PaginationComponent } from "./components/pagination.component";
+import { SearchComponent } from "./components/search.component";
+import { ListComponent } from "./components/list.component";
 
 @Component({
   standalone: true,
