@@ -24,7 +24,7 @@ export class MainComponent {
   private _overlayContainer = inject(OverlayContainer);
 
   // theme
-  private _isDark = signal(false);
+  private _isDark = signal(true);
   @HostBinding('class') get themeMode() {
     return this._isDark() ? 'theme-dark' : 'theme-light';
   }
@@ -50,11 +50,11 @@ export class MainComponent {
   constructor() {
     effect(() => {
       if (this._isDark()) {
-        this._overlayContainer.getContainerElement().classList.remove('theme-dark');
-        this._overlayContainer.getContainerElement().classList.add('theme-light');
-      } else {
-        this._overlayContainer.getContainerElement().classList.remove('theme-light');
         this._overlayContainer.getContainerElement().classList.add('theme-dark');
+        this._overlayContainer.getContainerElement().classList.remove('theme-light');
+      } else {
+        this._overlayContainer.getContainerElement().classList.add('theme-light');
+        this._overlayContainer.getContainerElement().classList.remove('theme-dark');
       }
     });
   }
