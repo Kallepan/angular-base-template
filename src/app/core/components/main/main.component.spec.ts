@@ -38,7 +38,7 @@ describe('MainComponent', () => {
   it('should have theme mode', () => {
     const fixture = TestBed.createComponent(MainComponent);
     const app = fixture.componentInstance;
-    expect(app.themeMode).toEqual('theme-light');
+    expect(app.themeMode).toEqual('theme-dark');
   });
 
   // Toggle theme test
@@ -46,7 +46,7 @@ describe('MainComponent', () => {
     const fixture = TestBed.createComponent(MainComponent);
     const app = fixture.componentInstance;
     app.toggleTheme();
-    expect(app.themeMode).toEqual('theme-dark');
+    expect(app.themeMode).toEqual('theme-light');
   });
 
   // Check overlay container
