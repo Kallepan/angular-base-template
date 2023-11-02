@@ -37,15 +37,6 @@ export class MainComponent {
     this._isDark.set(!this._isDark());
   }
 
-  // sidenav
-  private _isSidenavOpen = signal(false);
-  get isSidenavOpen() {
-    return this._isSidenavOpen();
-  }
-  setSidenavState(state: boolean) {
-    this._isSidenavOpen.set(state);
-  }
-
   // lifecycle hooks
   constructor() {
     effect(() => {

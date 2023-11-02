@@ -69,37 +69,16 @@ describe('MainComponent', () => {
 
   }));
 
-  // Test open sidenav
-  it('should open sidenav', async () => {
-    const fixture = TestBed.createComponent(MainComponent);
-    const app = fixture.componentInstance;
-    app.setSidenavState(true);
-
-    // Fetch the sidenav element
-    let loader = TestbedHarnessEnvironment.loader(fixture);
-    const sidenav = await loader.getHarness(MatSidenavHarness);
-
-    // Check if the sidenav is open
-    expect(await sidenav.isOpen()).toBe(true);
-  });
-
-  // Test Open and Close sidenav
-  it('should open and close sidenav', async () => {
-    const fixture = TestBed.createComponent(MainComponent);
-    const app = fixture.componentInstance;
-    app.setSidenavState(true);
-
-    // Fetch the sidenav element
-    let loader = TestbedHarnessEnvironment.loader(fixture);
-    const sidenav = await loader.getHarness(MatSidenavHarness);
-
-    // Check if the sidenav is open
-    expect(await sidenav.isOpen()).toBe(true);
-
-    // Close the sidenav
-    app.setSidenavState(false);
-
-    // Check if the sidenav is closed
-    expect(await sidenav.isOpen()).toBe(false);
-  });
+    // Sidenav testing
+    it('should be closed', async () => {
+      const fixture = TestBed.createComponent(MainComponent);
+      const app = fixture.componentInstance;
+  
+      // Fetch the sidenav element
+      let loader = TestbedHarnessEnvironment.loader(fixture);
+      const sidenav = await loader.getHarness(MatSidenavHarness);
+  
+      // Check if the sidenav is closed by default
+      expect(await sidenav.isOpen()).toBe(false);
+    });
 });

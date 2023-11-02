@@ -1,9 +1,9 @@
 <mat-sidenav-container>
-    <mat-sidenav #sidenav fixedInViewport="true" mode="over" [opened]="isSidenavOpen" (closed)="setSidenavState(false)">
+    <mat-sidenav #sidenav fixedInViewport="true" mode="push">
         DUMMY
     </mat-sidenav>
     <mat-sidenav-content class="app-frame">
-        <app-header (onToggleTheme)="toggleTheme()" (onToggleSidenav)="setSidenavState(true)"
+        <app-header (onToggleTheme)="toggleTheme()" (onToggleSidenav)="sidenav.toggle()"
             [isDark]="isDark"></app-header>
             <router-outlet></router-outlet>
         <app-footer></app-footer>
