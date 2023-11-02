@@ -5,6 +5,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { HeaderComponent } from '../header/header.component';
 import { FooterComponent } from '../footer/footer.component';
 import { RouterModule } from '@angular/router';
+import { SidenavComponent } from '../sidenav/sidenav.component';
 
 @Component({
   selector: 'app-main',
@@ -16,6 +17,7 @@ import { RouterModule } from '@angular/router';
     MatSidenavModule,
     HeaderComponent,
     FooterComponent,
+    SidenavComponent,
     RouterModule,
   ],
 })
