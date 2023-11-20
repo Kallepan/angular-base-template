@@ -8,9 +8,11 @@ import { Article } from "../interfaces/article";
   selector: "app-list",
   template: `
     <ul>
-      <li *ngFor="let article of articles">
+      @for (article of articles; track $index) {
+      <li>
         <a [routerLink]="article.id">{{ article.title }}</a>
       </li>
+      }
     </ul>
   `,
   imports: [CommonModule, RouterModule],

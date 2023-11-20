@@ -1,5 +1,6 @@
 <table mat-table matSort [dataSource]="dataSource">
-    <ng-container [matColumnDef]="column.key" *ngFor="let column of schema; let i = index;">
+    @for (column of schema; track $index) {
+    <ng-container [matColumnDef]="column.key">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>
             {{column.label}}
         </th>
@@ -7,6 +8,7 @@
             {{element[column.key]}}
         </td>
     </ng-container>
+    }
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr #tableRow mat-row *matRowDef="let row; columns: displayedColumns"></tr>

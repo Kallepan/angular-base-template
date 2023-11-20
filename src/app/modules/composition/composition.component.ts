@@ -9,12 +9,14 @@ import { DataTableComponent } from '@app/shared/components/data-table/data-table
   selector: 'app-composition',
   template: `
     <app-search-bar [control]="tableService.searchControl"></app-search-bar>
-    <app-data-table
-      *ngIf="{data: tableService.tableData$ | async, search: tableService.tableSearch$ | async} as vm;"
-      [data]="vm.data || []"
-      [filter]="vm.search || ''"
-      [schema]="tableService.tableSchema"
-    ></app-data-table>`,
+    @if ({data: tableService.tableData$ | async, search: tableService.tableSearch$ | async}; as vm) {
+      <app-data-table
+        [data]="vm.data || []"
+        [filter]="vm.search || ''"
+        [schema]="tableService.tableSchema"
+      ></app-data-table>
+    }
+  `,
   styleUrls: ['./composition.component.scss'],
   standalone: true,
   imports: [

@@ -14,11 +14,13 @@ import { ListComponent } from "./components/list.component";
     <app-list [articles]="service.filteredArticles()" />
 
     <div class="status">
-      <p *ngIf="service.status() === 'loading'">Loading...</p>
-      <div *ngIf="service.status() === 'error'">
+      @if (service.status() === 'loading') {
+        <p>Loading...</p>
+      }
+      @if (service.status() === 'error') {
         <p>{{ service.error() }}</p>
         <button (click)="service.retry$.next()">Retry</button>
-      </div>
+      }
     </div>
 
     <app-pagination

@@ -6,18 +6,16 @@ import { CommonModule } from "@angular/common";
   standalone: true,
   selector: "app-article-detail",
   template: `
-    <ng-container *ngIf="ads.article() as article; else loading">
-      <h1>{{ article.title }}</h1>
-      <p>
+  @if (ads.article(); as article) {
+    <h1>{{ article.title }}</h1>
+    <p>
         If I were determined enough to follow through with these jokes I would
         also get ChatGPT to write fake articles for these titles as well
       </p>
-    </ng-container>
-    <ng-template #loading>
-      <p *ngIf="ads.status() === 'loading'">Loading...</p>
-      <p *ngIf="ads.status() === 'error'">{{ ads.error() }}</p>
-    </ng-template>
-  `,
+  } @else {
+    @if (ads.status() === 'loading') { <p>Loading...</p> }
+    @if (ads.status() === 'error') { <p>{{ ads.error() }}</p> }
+  }`,
   providers: [ArticleDetailService],
   imports: [CommonModule],
 })
