@@ -5,14 +5,18 @@ import { NotificationService } from "./core/services/notification.service";
 import { ErrorHttpInterceptor } from "./core/interceptors/http-error-interceptor.module";
 import { HTTP_INTERCEPTORS } from "@angular/common/http";
 import { GlobalHttpInterceptor } from "./core/interceptors/http-global-interceptors.module";
-import { provideClientHydration } from "@angular/platform-browser";
+import { provideClientHydration, withHttpTransferCacheOptions } from "@angular/platform-browser";
 import { provideAnimations, provideNoopAnimations } from "@angular/platform-browser/animations";
 
 export const appConfig: ApplicationConfig = {
     providers: [
         provideRouter(routes),
-        provideClientHydration(),
         provideAnimations(),
+        provideClientHydration(
+            withHttpTransferCacheOptions({
+                includePostRequests: true,
+            }),
+        ),
         {
             provide: HTTP_INTERCEPTORS,
             useClass: GlobalHttpInterceptor,
