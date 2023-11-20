@@ -51,7 +51,7 @@ describe('MainComponent', () => {
   it('should toggle theme mode', () => {
     const fixture = TestBed.createComponent(MainComponent);
     const app = fixture.componentInstance;
-    app.toggleTheme();
+    app.isDark.set(false);
     expect(app.themeMode).toEqual('theme-light');
   });
 
@@ -64,7 +64,7 @@ describe('MainComponent', () => {
     expect(overlayContainer.getContainerElement().classList).toContain('theme-dark');
 
     // Toggle theme
-    app.toggleTheme();
+    app.isDark.set(false)
     fixture.detectChanges();
 
     // Wait for the animation to finish
