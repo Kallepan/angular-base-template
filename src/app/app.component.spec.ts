@@ -1,22 +1,15 @@
-import { TestBed, fakeAsync, flush } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
+import { TestBed, fakeAsync } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import { constants } from './core/constants/constants';
-import { AppModule } from './app.module';
+import { provideNoopAnimations } from '@angular/platform-browser/animations';
+import { provideRouter } from '@angular/router';
 
-import { TestbedHarnessEnvironment } from '@angular/cdk/testing/testbed';
-import { MatSidenavHarness } from '@angular/material/sidenav/testing';
-import { OverlayContainer } from '@angular/cdk/overlay';
 
 describe('AppComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [
-        AppModule,
-        RouterTestingModule,
-      ],
-      declarations: [AppComponent],
+      imports: [AppComponent],
+      providers: [provideNoopAnimations(), provideRouter([])],
     });
   });
 
@@ -24,4 +17,11 @@ describe('AppComponent', () => {
     const app = TestBed.createComponent(AppComponent).componentInstance;
     expect(app).toBeTruthy();
   }));
+
+  it("should contain app-main", () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('app-main')).toBeTruthy();
+  });
 });

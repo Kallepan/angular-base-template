@@ -1,9 +1,9 @@
 import { Injectable, computed, inject, signal } from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { FormControl } from "@angular/forms";
-import { Article } from "@app/core/interfaces/article";
 import { ArticleApiService } from "@app/core/services/api/article-api.service";
 import { Subject, retry, startWith, switchMap } from "rxjs";
+import { Article } from "../interfaces/article";
 
 export interface ArticlesState {
   articles: Article[];
@@ -39,8 +39,8 @@ export class ArticlesService {
 
     return filter
       ? this.articles().filter((article) =>
-          article.title.toLowerCase().includes(filter.toLowerCase())
-        )
+        article.title.toLowerCase().includes(filter.toLowerCase())
+      )
       : this.articles();
   });
 

@@ -18,4 +18,14 @@ describe('CompositionComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it(`tableService should be defined`, () => {
+    expect(component.tableService).toBeDefined();
+  });
+
+  it('should display table', () => {
+    const compiled = fixture.nativeElement;
+    expect(compiled.querySelector('app-search-bar')).toBeTruthy();
+    expect(compiled.querySelector('app-data-table')).toBeTruthy();
+  });
 });

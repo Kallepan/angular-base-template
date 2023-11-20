@@ -1,11 +1,18 @@
-import { Component, HostBinding, effect, inject, signal } from '@angular/core';
-import { OverlayContainer } from '@angular/cdk/overlay';
+import { Component } from '@angular/core';
+import { MainComponent } from './core/components/main/main.component';
+import { RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
-})
-export class AppComponent {
+  styleUrls: ['./app.component.scss'],
+  standalone: true,
+  imports: [
+    CommonModule,
+    MainComponent,
 
-}
+    RouterOutlet,
+  ]
+})
+export class AppComponent { }

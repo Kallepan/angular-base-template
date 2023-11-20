@@ -1,7 +1,7 @@
 import { CommonModule } from "@angular/common";
 import { Component, Input } from "@angular/core";
 import { RouterModule } from "@angular/router";
-import { Article } from "@app/core/interfaces/article";
+import { Article } from "../interfaces/article";
 
 @Component({
   standalone: true,

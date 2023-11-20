@@ -20,4 +20,15 @@ describe('FooterComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it(`version should be '1.0.0'`, () => {
+    expect(component.version).toBe('1.0.0');
+  });
+
+  it('should display current year', () => {
+    expect(component.year).toBe(new Date().getFullYear());
+
+    const compiled = fixture.nativeElement;
+    expect(compiled.querySelector('span').textContent).toContain(new Date().getFullYear());
+  })
 });

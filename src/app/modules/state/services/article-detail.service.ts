@@ -2,8 +2,8 @@ import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { Injectable, computed, inject, signal } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { switchMap } from "rxjs";
-import { Article } from "@app/core/interfaces/article";
 import { ArticleApiService } from "@app/core/services/api/article-api.service";
+import { Article } from "../interfaces/article";
 
 export interface ArticleDetailState {
   article: Article | null;
