@@ -30,11 +30,12 @@ export class HeaderComponent {
   @Output() onToggleSidenav = new EventEmitter<void>();
 
   // Fetch the routes from the router config
+  // I wanted to filter out
   routes = this._router.config.map((route) => {
     const data = route.data || {};
     return {
       path: route.path,
-      label: data['label'],	
+      label: data['label'],
     }
   }).filter((route) => !!route.label); // Filter out the routes without labels
 
