@@ -15,7 +15,7 @@ export class messages {
 
     public static GENERAL = {
         BAD_REQUEST: 'Bad request',
-        UNKNOWN: 'An unknown error occured',
+        UNKNOWN_ERROR: 'An unknown error occured',
         UPDATE_FAILED: 'Update fehlgeschlagen',
         SERVER_ERROR: 'An error occured on the server',
         FEATURE_FLAG_DISABLED: 'Diese Funktion ist fuer Sie nicht verfügbar',
