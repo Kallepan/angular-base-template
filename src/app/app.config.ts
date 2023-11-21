@@ -2,11 +2,11 @@ import { ApplicationConfig } from "@angular/core";
 import { provideRouter } from "@angular/router";
 import { routes } from "./app.routes";
 import { NotificationService } from "./core/services/notification.service";
-import { ErrorHttpInterceptor } from "./core/interceptors/http-error-interceptor.module";
-import { HTTP_INTERCEPTORS } from "@angular/common/http";
-import { GlobalHttpInterceptor } from "./core/interceptors/http-global-interceptors.module";
+import { provideHttpClient, withInterceptors } from "@angular/common/http";
 import { provideClientHydration, withHttpTransferCacheOptions } from "@angular/platform-browser";
-import { provideAnimations, provideNoopAnimations } from "@angular/platform-browser/animations";
+import { provideAnimations } from "@angular/platform-browser/animations";
+import { httpErrorInterceptor } from "./core/interceptors/http-error-interceptor";
+import { httpAuthInterceptor } from "./core/interceptors/http-auth-interceptor";
 
 export const appConfig: ApplicationConfig = {
     providers: [
@@ -17,16 +17,12 @@ export const appConfig: ApplicationConfig = {
                 includePostRequests: true,
             }),
         ),
-        {
-            provide: HTTP_INTERCEPTORS,
-            useClass: GlobalHttpInterceptor,
-            multi: true
-        },
-        {
-            provide: HTTP_INTERCEPTORS,
-            useClass: ErrorHttpInterceptor,
-            multi: true,
-        },
+        provideHttpClient(
+            withInterceptors([
+                httpErrorInterceptor,
+                httpAuthInterceptor,
+            ]),
+        ),
         NotificationService,
     ]
 }
