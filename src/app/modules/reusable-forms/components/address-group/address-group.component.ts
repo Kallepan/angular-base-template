@@ -10,7 +10,7 @@ import { ControlContainer, FormControl, FormGroup, ReactiveFormsModule } from '@
   viewProviders: [
     {
       provide: ControlContainer,
-      useFactory: () => inject(ControlContainer, {skipSelf: true})
+      useFactory: () => inject(ControlContainer, { skipSelf: true })
     }
   ],
   styleUrls: ['./address-group.component.scss'],
@@ -46,6 +46,6 @@ export class AddressGroupComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.parentFormGroup.removeControl('adress');
+    this.parentFormGroup.removeControl(this.controlKey);
   }
 }
