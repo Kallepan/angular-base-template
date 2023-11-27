@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="row">
+        <h1>
+            {{title}}
+        </h1>
+    </div>
+    <div class="row">
+        @for (route of routes; track route) {
+        <button mat-raised-button color="accent" [routerLink]="route.path" [matTooltip]="route.tooltip"
+            class="button">{{route.title}}</button>
+        }
+    </div>
+</div>

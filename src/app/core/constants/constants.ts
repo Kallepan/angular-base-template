@@ -19,6 +19,11 @@ export class constants {
     }
 
 
-    public static TITLE = 'Angular Base Template';
+    public static TITLE_SHORT = 'ABT';
+    public static TITLE_LONG = 'Angular Base Template';
     public static VERSION = '1.0.0';
+
+    public static ROUTES = [
+        { path: '', title: 'Home', tooltip: 'Home' },
+    ]
 }

@@ -1,4 +1,6 @@
 import { Routes } from '@angular/router';
+import { HomeComponent } from './core/components/home/home.component';
+import { importProvidersFrom } from '@angular/core';
 
 // Add routes with labels to display in the menu
 export const routes: Routes = [
@@ -24,7 +26,8 @@ export const routes: Routes = [
   {
     path: 'bridge',
     loadComponent: () => import('./modules/bridge/view.component').then(m => m.ViewComponent),
-    data: { label: 'Bridge' }
+    data: { label: 'Bridge' },
   },
+  { path: '', component: HomeComponent, title: 'Home' },
   { path: '**', redirectTo: '' },
 ];
