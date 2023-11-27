@@ -13,7 +13,7 @@ import { CanResponsiveDirective } from '@app/shared/directives/can-responsive.di
     }
   ]
 })
-export class StandaloneComponent implements OnInit {
+export class StandaloneOneComponent implements OnInit {
   _notificationService = inject(NotificationService);
   ngOnInit(): void {
     this._notificationService.infoMessage('Standalone Component Loaded');

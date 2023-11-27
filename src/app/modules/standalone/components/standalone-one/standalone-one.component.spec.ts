@@ -1,26 +1,30 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { StandaloneComponent } from './standalone.component';
+import { StandaloneOneComponent } from './standalone-one.component';
 import { NotificationService } from '@app/core/services/notification.service';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
-describe('StandaloneComponent', () => {
-  let component: StandaloneComponent;
-  let fixture: ComponentFixture<StandaloneComponent>;
-  let notificationService: NotificationService;
+describe('StandaloneOneComponent', () => {
+  let component: StandaloneOneComponent;
+  let fixture: ComponentFixture<StandaloneOneComponent>;
+  let notificationService: jasmine.SpyObj<NotificationService>;
 
   beforeEach(() => {
+    notificationService = jasmine.createSpyObj('NotificationService', ['infoMessage']);
+
     TestBed.configureTestingModule({
       imports: [
         MatSnackBarModule,
       ],
       providers: [
-        NotificationService,
+        {
+          provide: NotificationService,
+          useValue: notificationService,
+        },
       ]
     });
-    fixture = TestBed.createComponent(StandaloneComponent);
+    fixture = TestBed.createComponent(StandaloneOneComponent);
     component = fixture.componentInstance;
-    notificationService = TestBed.inject(NotificationService);
     fixture.detectChanges();
   });
 
@@ -32,5 +36,9 @@ describe('StandaloneComponent', () => {
   it('should contain a <p> tag', () => {
     const compiled = fixture.nativeElement;
     expect(compiled.querySelector('p')).toBeTruthy();
+  });
+
+  it('notificationService.infoMessage should be called', () => {
+    expect(notificationService.infoMessage).toHaveBeenCalled();
   });
 });
