@@ -55,4 +55,48 @@ describe('NotificationService', () => {
     // Check if the snackbar was called twice
     expect(mockSnackBar.open).toHaveBeenCalledTimes(2);
   });
+
+  it('should display correct css class for info message', () => {
+    // Mock the snackbar
+    mockSnackBar.open.and.returnValue({
+      afterDismissed: () => {
+        return {
+          toPromise: () => Promise.resolve(),
+        }
+      }
+    });
+
+    // Call the infoMessage method
+    service.infoMessage('test');
+
+    // Check if the snackbar was called with the correct css class
+    expect(mockSnackBar.open).toHaveBeenCalledWith('test', 'Dismiss', {
+      duration: 3000,
+      horizontalPosition: 'start',
+      verticalPosition: 'bottom',
+      panelClass: `info-snackbar`,
+    });
+  });
+
+  it('should display correct css class for warn message', () => {
+    // Mock the snackbar
+    mockSnackBar.open.and.returnValue({
+      afterDismissed: () => {
+        return {
+          toPromise: () => Promise.resolve(),
+        }
+      }
+    });
+
+    // Call the warnMessage method
+    service.warnMessage('test');
+
+    // Check if the snackbar was called with the correct css class
+    expect(mockSnackBar.open).toHaveBeenCalledWith('test', 'Dismiss', {
+      duration: 3000,
+      horizontalPosition: 'start',
+      verticalPosition: 'bottom',
+      panelClass: `warn-snackbar`,
+    });
+  });
 });
