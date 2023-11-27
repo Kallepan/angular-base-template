@@ -3,12 +3,14 @@ import { TestBed } from '@angular/core/testing';
 import { NotificationService } from './notification.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
-const mockSnackBar = jasmine.createSpyObj('MatSnackBar',['open']);
-
 describe('NotificationService', () => {
   let service: NotificationService;
+  let mockSnackBar: jasmine.SpyObj<MatSnackBar>;
 
   beforeEach(() => {
+    // Mock the snackbar
+    mockSnackBar = jasmine.createSpyObj<MatSnackBar>('MatSnackBar', ['open']);
+
     TestBed.configureTestingModule({
       providers: [
         { provide: MatSnackBar, useValue: mockSnackBar },
@@ -39,15 +41,6 @@ describe('NotificationService', () => {
   });
 
   it('test queueing of messages', async () => {
-    // Mock the snackbar
-    mockSnackBar.open.and.returnValue({
-      afterDismissed: () => {
-        return {
-          toPromise: () => Promise.resolve(),
-        }
-      }
-    });
-
     // Call the infoMessage method
     service.infoMessage('test1');
     service.infoMessage('test2');
@@ -57,15 +50,6 @@ describe('NotificationService', () => {
   });
 
   it('should display correct css class for info message', () => {
-    // Mock the snackbar
-    mockSnackBar.open.and.returnValue({
-      afterDismissed: () => {
-        return {
-          toPromise: () => Promise.resolve(),
-        }
-      }
-    });
-
     // Call the infoMessage method
     service.infoMessage('test');
 
@@ -79,15 +63,6 @@ describe('NotificationService', () => {
   });
 
   it('should display correct css class for warn message', () => {
-    // Mock the snackbar
-    mockSnackBar.open.and.returnValue({
-      afterDismissed: () => {
-        return {
-          toPromise: () => Promise.resolve(),
-        }
-      }
-    });
-
     // Call the warnMessage method
     service.warnMessage('test');
 

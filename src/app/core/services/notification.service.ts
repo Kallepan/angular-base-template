@@ -41,6 +41,7 @@ export class NotificationService {
   }
   
   constructor() {
+    // This is technically a memory leak, but it's a singleton service so it's fine
     this._message.pipe(
       concatMap(message => this._getSnackBarDelay(message)),
     ).subscribe(res => {
@@ -50,6 +51,6 @@ export class NotificationService {
         verticalPosition: this._verticalPosition,
         panelClass: `${res.type}-snackbar`,
       });
-    }); // This is technically a memory leak, but it's a singleton service so it's fine
+    }); 
   }
 }
