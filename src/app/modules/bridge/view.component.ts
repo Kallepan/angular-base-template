@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
-import { BridgeModule } from './bridge.module';
+import { WeatherWidgetComponent } from './widgets/weather-widget/weather-widget.component';
+import { WidgetWrapperComponent } from './widget-wrapper/widget-wrapper.component';
+import { VelocityWidgetComponent } from './widgets/velocity-widget/velocity-widget.component';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-view',
@@ -22,6 +26,12 @@ import { BridgeModule } from './bridge.module';
     }
     `],
   standalone: true,
-  imports: [BridgeModule],
+  imports: [
+    WeatherWidgetComponent,
+    WidgetWrapperComponent,
+    VelocityWidgetComponent,
+    MatProgressBarModule,
+    MatIconModule,
+  ]
 })
 export class ViewComponent { }

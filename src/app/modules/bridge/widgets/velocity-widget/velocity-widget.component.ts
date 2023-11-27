@@ -1,8 +1,11 @@
 import { Widget } from '../widget.interface';
 import { Component } from '@angular/core';
 import { WIDGET } from '../widget.token';
+import { MatIconModule } from '@angular/material/icon';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @Component({
+    standalone: true,
     selector: 'app-velocity-widget',
     templateUrl: './velocity-widget.component.html',
     styleUrls: ['./velocity-widget.component.scss'],
@@ -13,6 +16,10 @@ import { WIDGET } from '../widget.token';
             useExisting: VelocityWidgetComponent,
         },
     ],
+    imports: [
+        MatIconModule,
+        MatProgressSpinnerModule,
+    ]
 })
 export class VelocityWidgetComponent implements Widget {
     isRefreshing = false;
