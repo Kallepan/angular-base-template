@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { CompositionData, CompositionTableService } from './services/composition';
+import { CompositionData, CompositionTableService } from '../services/composition';
 import { CommonModule } from '@angular/common';
 import { AbstractTableService } from '@app/shared/services/data-table.service';
 import { SearchBarComponent } from '@app/shared/components/search-bar/search-bar.component';

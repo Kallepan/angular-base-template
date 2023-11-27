@@ -27,7 +27,7 @@ describe('AddressGroupComponent', () => {
 
   beforeEach(() => {
     fixture = TestBed.createComponent(AddressGroupComponent);
-    
+
     component = fixture.componentInstance;
     component.controlKey = "test";
     component.label = "test";
@@ -63,7 +63,7 @@ describe('AddressGroupComponent', () => {
     component.ngOnDestroy();
 
     // Assert
-    expect(component.parentFormGroup.removeControl).toHaveBeenCalledWith('adress');
+    expect(component.parentFormGroup.removeControl).toHaveBeenCalledWith(component.controlKey);
   });
 
 });
