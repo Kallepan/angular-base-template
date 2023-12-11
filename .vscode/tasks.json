@@ -5,37 +5,59 @@
     {
       "type": "npm",
       "script": "start",
+      "path": ".",
       "isBackground": true,
-      "problemMatcher": {
-        "owner": "typescript",
-        "pattern": "$tsc",
-        "background": {
-          "activeOnStart": true,
-          "beginsPattern": {
-            "regexp": "(.*?)"
-          },
-          "endsPattern": {
-            "regexp": "bundle generation complete"
+      "problemMatcher": [
+        {
+          "owner": "typescript",
+          "source": "ts",
+          "fileLocation": ["relative", "${workspaceFolder}"],
+          "pattern": "$tsc",
+          "background": {
+            "activeOnStart": true,
+            "beginsPattern": {
+              "regexp": "(.*?)"
+            },
+            "endsPattern": {
+              "regexp": "Compiled | Failed to compile."
+            }
           }
         }
+      ],
+      "label": "npm: start",
+      "detail": "ng serve",
+      "group": {
+        "kind": "build",
+        "isDefault": true
       }
     },
     {
       "type": "npm",
       "script": "test",
+      "path": ".", // This is the root of the project
+      "label": "npm: test",
+      "detail": "ng test",
       "isBackground": true,
-      "problemMatcher": {
-        "owner": "typescript",
-        "pattern": "$tsc",
-        "background": {
-          "activeOnStart": true,
-          "beginsPattern": {
-            "regexp": "(.*?)"
-          },
-          "endsPattern": {
-            "regexp": "bundle generation complete"
+      "problemMatcher": [
+        {
+          "owner": "typescript",
+          "source": "ts",
+          "fileLocation": ["relative", "${workspaceFolder}"],
+          "pattern": "$tsc",
+          "background": {
+            "activeOnStart": true,
+            "beginsPattern": {
+              "regexp": "(.*?)"
+            },
+            "endsPattern": {
+              "regexp": "Browser application bundle generation complete"
+            }
           }
         }
+      ],
+      "group": {
+        "kind": "test",
+        "isDefault": false
       }
     }
   ]
