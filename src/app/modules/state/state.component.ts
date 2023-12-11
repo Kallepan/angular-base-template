@@ -1,13 +1,13 @@
-import { Component, inject } from "@angular/core";
-import { CommonModule } from "@angular/common";
-import { ArticlesService } from "./services/article.service";
-import { PaginationComponent } from "./components/pagination.component";
-import { SearchComponent } from "./components/search.component";
-import { ListComponent } from "./components/list.component";
+import { CommonModule } from '@angular/common';
+import { Component, inject } from '@angular/core';
+import { ListComponent } from './components/list.component';
+import { PaginationComponent } from './components/pagination.component';
+import { SearchComponent } from './components/search.component';
+import { ArticlesService } from './services/article.service';
 
 @Component({
   standalone: true,
-  selector: "app-articles",
+  selector: 'app-articles',
   providers: [ArticlesService],
   template: `
     <app-search [control]="service.filterControl" />

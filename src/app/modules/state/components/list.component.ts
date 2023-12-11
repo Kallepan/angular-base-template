@@ -1,17 +1,17 @@
-import { CommonModule } from "@angular/common";
-import { Component, Input } from "@angular/core";
-import { RouterModule } from "@angular/router";
-import { Article } from "../interfaces/article";
+import { CommonModule } from '@angular/common';
+import { Component, Input } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { Article } from '../interfaces/article';
 
 @Component({
   standalone: true,
-  selector: "app-list",
+  selector: 'app-list',
   template: `
     <ul>
       @for (article of articles; track $index) {
-      <li>
-        <a [routerLink]="article.id">{{ article.title }}</a>
-      </li>
+        <li>
+          <a [routerLink]="article.id">{{ article.title }}</a>
+        </li>
       }
     </ul>
   `,

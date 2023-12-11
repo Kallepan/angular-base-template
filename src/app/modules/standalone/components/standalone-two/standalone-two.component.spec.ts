@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { StandaloneTwoComponent } from './standalone-two.component';
 import { NotificationService } from '@app/core/services/notification.service';
+import { StandaloneTwoComponent } from './standalone-two.component';
 
 describe('StandaloneTwoComponent', () => {
   let component: StandaloneTwoComponent;
@@ -9,7 +9,9 @@ describe('StandaloneTwoComponent', () => {
   let notificationService: jasmine.SpyObj<NotificationService>;
 
   beforeEach(async () => {
-    notificationService = jasmine.createSpyObj('NotificationService', ['infoMessage']);
+    notificationService = jasmine.createSpyObj('NotificationService', [
+      'infoMessage',
+    ]);
 
     await TestBed.configureTestingModule({
       imports: [StandaloneTwoComponent],
@@ -18,9 +20,8 @@ describe('StandaloneTwoComponent', () => {
           provide: NotificationService,
           useValue: notificationService,
         },
-      ]
-    })
-      .compileComponents();
+      ],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(StandaloneTwoComponent);
     component = fixture.componentInstance;

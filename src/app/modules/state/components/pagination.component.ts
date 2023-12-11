@@ -1,8 +1,8 @@
-import { Component, EventEmitter, Input, Output } from "@angular/core";
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   standalone: true,
-  selector: "app-pagination",
+  selector: 'app-pagination',
   template: `
     <button (click)="currentPage > 1 ? pageChange.emit(currentPage - 1) : ''">
       Prev

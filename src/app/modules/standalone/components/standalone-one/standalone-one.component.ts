@@ -10,8 +10,8 @@ import { CanResponsiveDirective } from '@app/shared/directives/can-responsive.di
   hostDirectives: [
     {
       directive: CanResponsiveDirective,
-    }
-  ]
+    },
+  ],
 })
 export class StandaloneOneComponent implements OnInit {
   _notificationService = inject(NotificationService);

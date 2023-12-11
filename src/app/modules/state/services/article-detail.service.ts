@@ -1,13 +1,13 @@
-import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
-import { Injectable, computed, inject, signal } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
-import { switchMap } from "rxjs";
-import { ArticleApiService } from "@app/core/services/api/article-api.service";
-import { Article } from "../interfaces/article";
+import { Injectable, computed, inject, signal } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { ActivatedRoute } from '@angular/router';
+import { switchMap } from 'rxjs';
+import { Article } from '../interfaces/article';
+import { ArticleApiService } from './article-api.service';
 
 export interface ArticleDetailState {
   article: Article | null;
-  status: "loading" | "success" | "error";
+  status: 'loading' | 'success' | 'error';
   error: string | null;
 }
 
@@ -18,7 +18,7 @@ export class ArticleDetailService {
 
   private state = signal<ArticleDetailState>({
     article: null,
-    status: "loading",
+    status: 'loading',
     error: null,
   });
 
@@ -29,7 +29,7 @@ export class ArticleDetailService {
 
   // sources
   articleLoaded$ = this.paramMap.pipe(
-    switchMap((params) => this.apiService.getArticleById(params.get("id")))
+    switchMap((params) => this.apiService.getArticleById(params.get('id'))),
   );
 
   constructor() {
@@ -39,11 +39,11 @@ export class ArticleDetailService {
         this.state.update((state) => ({
           ...state,
           article,
-          status: "success",
+          status: 'success',
           error: null,
         })),
       error: (error) =>
-        this.state.update((state) => ({ ...state, error, status: "error" })),
+        this.state.update((state) => ({ ...state, error, status: 'error' })),
     });
   }
 }

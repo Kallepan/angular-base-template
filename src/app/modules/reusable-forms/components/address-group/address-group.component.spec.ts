@@ -1,7 +1,13 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+import {
+  ControlContainer,
+  FormControl,
+  FormGroup,
+  FormGroupDirective,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { AddressGroupComponent } from './address-group.component';
-import { ControlContainer, FormControl, FormGroup, FormGroupDirective, ReactiveFormsModule } from '@angular/forms';
 
 describe('AddressGroupComponent', () => {
   let component: AddressGroupComponent;
@@ -9,7 +15,7 @@ describe('AddressGroupComponent', () => {
 
   beforeEach(() => {
     const fg: FormGroup = new FormGroup({
-      'answer': new FormControl(''),
+      answer: new FormControl(''),
     });
     const fgd: FormGroupDirective = new FormGroupDirective([], []);
     fgd.form = fg;
@@ -19,9 +25,9 @@ describe('AddressGroupComponent', () => {
       providers: [
         {
           provide: ControlContainer,
-          useValue: fgd
-        }
-      ]
+          useValue: fgd,
+        },
+      ],
     });
   });
 
@@ -29,8 +35,8 @@ describe('AddressGroupComponent', () => {
     fixture = TestBed.createComponent(AddressGroupComponent);
 
     component = fixture.componentInstance;
-    component.controlKey = "test";
-    component.label = "test";
+    component.controlKey = 'test';
+    component.label = 'test';
   });
 
   it('should create', () => {
@@ -38,11 +44,7 @@ describe('AddressGroupComponent', () => {
   });
 
   it('should add a new form group control when initialized', () => {
-    // Arrange
-    const formGroup = new FormGroup({
-      street: new FormControl(''),
-      zipCode: new FormControl('')
-    });
+    // Set up
     spyOn(component.parentFormGroup, 'addControl');
 
     // Act
@@ -51,7 +53,7 @@ describe('AddressGroupComponent', () => {
     // Assert
     expect(component.parentFormGroup.addControl).toHaveBeenCalledWith(
       component.controlKey,
-      jasmine.any(FormGroup)
+      jasmine.any(FormGroup),
     );
   });
 
@@ -63,7 +65,8 @@ describe('AddressGroupComponent', () => {
     component.ngOnDestroy();
 
     // Assert
-    expect(component.parentFormGroup.removeControl).toHaveBeenCalledWith(component.controlKey);
+    expect(component.parentFormGroup.removeControl).toHaveBeenCalledWith(
+      component.controlKey,
+    );
   });
-
 });

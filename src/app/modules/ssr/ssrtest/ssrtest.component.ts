@@ -1,5 +1,10 @@
-import { Component, ElementRef, ViewChild, afterNextRender } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {
+  Component,
+  ElementRef,
+  ViewChild,
+  afterNextRender,
+} from '@angular/core';
 
 @Component({
   selector: 'app-ssrtest',
@@ -17,7 +22,9 @@ export class SSRTestComponent {
     afterNextRender(() => {
       // Safe to check `scrollHeight` because this will only run in the browser, not the server.
 
-      console.log('content height: ' + this.contentRef.nativeElement.scrollHeight);
+      console.log(
+        'content height: ' + this.contentRef.nativeElement.scrollHeight,
+      );
     });
   }
 }

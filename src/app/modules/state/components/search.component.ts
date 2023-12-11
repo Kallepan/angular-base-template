@@ -1,11 +1,16 @@
-import { Component, Input } from "@angular/core";
-import { FormControl, ReactiveFormsModule } from "@angular/forms";
+import { Component, Input } from '@angular/core';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   standalone: true,
   imports: [ReactiveFormsModule],
-  selector: "app-search",
-  template: ` <input [formControl]="control" placeholder="search..." /> `,
+  selector: 'app-search',
+  template: `
+    <input
+      [formControl]="control"
+      placeholder="search..."
+    />
+  `,
   styles: [
     `
       input {

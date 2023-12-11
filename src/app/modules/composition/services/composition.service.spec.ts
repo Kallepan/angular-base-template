@@ -1,12 +1,15 @@
 import { TestBed } from '@angular/core/testing';
-import { CompositionData, CompositionTableService } from './composition';
+import {
+  CompositionData,
+  CompositionTableService,
+} from './composition.service';
 
 describe('CompositionTableService', () => {
   let service: CompositionTableService<CompositionData>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: []
+      imports: [],
     });
     service = TestBed.inject(CompositionTableService);
   });
@@ -35,5 +38,4 @@ describe('CompositionTableService', () => {
     expect(value).toBeTruthy();
     value.unsubscribe();
   });
-
 });

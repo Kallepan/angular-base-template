@@ -1,15 +1,15 @@
-import { Injectable, computed, inject, signal } from "@angular/core";
-import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
-import { FormControl } from "@angular/forms";
-import { ArticleApiService } from "@app/core/services/api/article-api.service";
-import { Subject, retry, startWith, switchMap } from "rxjs";
-import { Article } from "../interfaces/article";
+import { Injectable, computed, inject, signal } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { FormControl } from '@angular/forms';
+import { Subject, retry, startWith, switchMap } from 'rxjs';
+import { Article } from '../interfaces/article';
+import { ArticleApiService } from './article-api.service';
 
 export interface ArticlesState {
   articles: Article[];
   filter: string | null;
   error: string | null;
-  status: "loading" | "success" | "error";
+  status: 'loading' | 'success' | 'error';
   currentPage: number;
 }
 
@@ -21,7 +21,7 @@ export class ArticlesService {
     articles: [],
     filter: null,
     error: null,
-    status: "loading",
+    status: 'loading',
     currentPage: 1,
   });
 
@@ -39,8 +39,8 @@ export class ArticlesService {
 
     return filter
       ? this.articles().filter((article) =>
-        article.title.toLowerCase().includes(filter.toLowerCase())
-      )
+          article.title.toLowerCase().includes(filter.toLowerCase()),
+        )
       : this.articles();
   });
 
@@ -58,9 +58,9 @@ export class ArticlesService {
             this.error$.next(err);
             return this.retry$;
           },
-        })
-      )
-    )
+        }),
+      ),
+    ),
   );
 
   filter$ = this.filterControl.valueChanges;
@@ -71,40 +71,38 @@ export class ArticlesService {
       this.state.update((state) => ({
         ...state,
         articles,
-        status: "success",
-      }))
+        status: 'success',
+      })),
     );
 
-    this.currentPage$
-      .pipe(takeUntilDestroyed())
-      .subscribe((currentPage) =>
-        this.state.update((state) => ({
-          ...state,
-          currentPage,
-          status: "loading",
-          articles: [],
-        }))
-      );
+    this.currentPage$.pipe(takeUntilDestroyed()).subscribe((currentPage) =>
+      this.state.update((state) => ({
+        ...state,
+        currentPage,
+        status: 'loading',
+        articles: [],
+      })),
+    );
 
     this.filter$.pipe(takeUntilDestroyed()).subscribe((filter) =>
       this.state.update((state) => ({
         ...state,
-        filter: filter === "" ? null : filter,
-      }))
+        filter: filter === '' ? null : filter,
+      })),
     );
 
     this.retry$
       .pipe(takeUntilDestroyed())
       .subscribe(() =>
-        this.state.update((state) => ({ ...state, status: "loading" }))
+        this.state.update((state) => ({ ...state, status: 'loading' })),
       );
 
     this.error$.pipe(takeUntilDestroyed()).subscribe((error) =>
       this.state.update((state) => ({
         ...state,
-        status: "error",
+        status: 'error',
         error: error.message,
-      }))
+      })),
     );
   }
 }

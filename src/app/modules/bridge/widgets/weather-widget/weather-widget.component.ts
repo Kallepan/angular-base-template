@@ -1,8 +1,8 @@
-import { WIDGET } from '../widget.token';
 import { Component } from '@angular/core';
-import { Widget } from '../widget.interface';
-import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatIconModule } from '@angular/material/icon';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { Widget } from '../widget.interface';
+import { WIDGET } from '../widget.token';
 
 @Component({
   standalone: true,
@@ -16,10 +16,7 @@ import { MatIconModule } from '@angular/material/icon';
       useExisting: WeatherWidgetComponent,
     },
   ],
-  imports: [
-    MatProgressBarModule,
-    MatIconModule,
-  ]
+  imports: [MatProgressBarModule, MatIconModule],
 })
 export class WeatherWidgetComponent implements Widget {
   isLoading = false;

@@ -1,32 +1,43 @@
 import { Component, Input, OnDestroy, OnInit, inject } from '@angular/core';
-import { ControlContainer, FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import {
+  ControlContainer,
+  FormControl,
+  FormGroup,
+  ReactiveFormsModule,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-address-group',
   standalone: true,
-  imports: [
-    ReactiveFormsModule,
-  ],
+  imports: [ReactiveFormsModule],
   viewProviders: [
     {
       provide: ControlContainer,
-      useFactory: () => inject(ControlContainer, { skipSelf: true })
-    }
+      useFactory: () => inject(ControlContainer, { skipSelf: true }),
+    },
   ],
   styleUrls: ['./address-group.component.scss'],
   template: `
     <fieldset [formGroupName]="controlKey">
-    <legend>{{label}}</legend>
+      <legend>{{ label }}</legend>
       <div class="form-field">
         <label for="zipCode">Zip Code</label>
-        <input type="text" id="zipCode" formControlName="zipCode">
+        <input
+          type="text"
+          id="zipCode"
+          formControlName="zipCode"
+        />
       </div>
       <div class="form-field">
         <label for="address">Street</label>
-        <input type="text" id="address" formControlName="street">
+        <input
+          type="text"
+          id="address"
+          formControlName="street"
+        />
       </div>
     </fieldset>
-  `
+  `,
 })
 export class AddressGroupComponent implements OnInit, OnDestroy {
   @Input({ required: true }) controlKey = '';
@@ -39,10 +50,13 @@ export class AddressGroupComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.parentFormGroup.addControl(this.controlKey, new FormGroup({
-      zipCode: new FormControl(''),
-      street: new FormControl(''),
-    }));
+    this.parentFormGroup.addControl(
+      this.controlKey,
+      new FormGroup({
+        zipCode: new FormControl(''),
+        street: new FormControl(''),
+      }),
+    );
   }
 
   ngOnDestroy(): void {

@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { CompositionComponent } from './composition.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CompositionComponent } from './composition.component';
 
 describe('CompositionComponent', () => {
   let component: CompositionComponent;
