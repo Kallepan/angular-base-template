@@ -1,6 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
-import { Subject, concatMap, map, of, tap } from 'rxjs';
+import { Subject, concatMap, map, of } from 'rxjs';
 
 /** 
  * This service is used to display notifications to the user.
@@ -39,7 +39,9 @@ export class NotificationService {
 
     return of(message);
   }
+  
   constructor() {
+    // This is technically a memory leak, but it's a singleton service so it's fine
     this._message.pipe(
       concatMap(message => this._getSnackBarDelay(message)),
     ).subscribe(res => {
@@ -47,7 +49,8 @@ export class NotificationService {
         duration: 3000,
         horizontalPosition: this._horizontalPosition,
         verticalPosition: this._verticalPosition,
+        panelClass: `${res.type}-snackbar`,
       });
-    }); // This is technically a memory leak, but it's a singleton service so it's fine
+    }); 
   }
 }

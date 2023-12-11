@@ -3,6 +3,7 @@ import { environment } from "environments/environment";
 export class constants {
     public static APIS = {
         AUTH: environment.authUrl,
+        VERIFY: environment.verifyUrl,
         BACKEND_ONE: environment.apiUrl,
     };
 
