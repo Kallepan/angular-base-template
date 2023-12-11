@@ -7,8 +7,7 @@ describe('ButtonComponent', () => {
   let fixture: ComponentFixture<ButtonComponent>;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({
-    });
+    TestBed.configureTestingModule({});
     fixture = TestBed.createComponent(ButtonComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

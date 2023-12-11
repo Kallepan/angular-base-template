@@ -6,19 +6,14 @@ import { RouterModule } from '@angular/router';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
-    selector: 'app-home',
-    standalone: true,
-    imports: [
-        CommonModule,
-        MatButtonModule,
-        MatTooltipModule,
-        RouterModule,
-    ],
-    templateUrl: './home.component.html',
-    styleUrls: ['./home.component.scss']
+  selector: 'app-home',
+  standalone: true,
+  imports: [CommonModule, MatButtonModule, MatTooltipModule, RouterModule],
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
-    routes = constants.ROUTES;
+  routes = constants.ROUTES;
 
-    title = constants.TITLE_LONG;
+  title = constants.TITLE_LONG;
 }

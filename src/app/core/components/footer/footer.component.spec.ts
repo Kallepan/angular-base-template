@@ -8,9 +8,7 @@ describe('FooterComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [
-        FooterComponent,
-      ],
+      imports: [FooterComponent],
     });
     fixture = TestBed.createComponent(FooterComponent);
     component = fixture.componentInstance;
@@ -29,6 +27,8 @@ describe('FooterComponent', () => {
     expect(component.year).toBe(new Date().getFullYear());
 
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('span').textContent).toContain(new Date().getFullYear());
-  })
+    expect(compiled.querySelector('span').textContent).toContain(
+      new Date().getFullYear(),
+    );
+  });
 });

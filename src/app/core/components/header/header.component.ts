@@ -31,13 +31,15 @@ export class HeaderComponent {
 
   // Fetch the routes from the router config
   // I wanted to filter out
-  routes = this._router.config.map((route) => {
-    const data = route.data || {};
-    return {
-      path: route.path,
-      label: data['label'],
-    }
-  }).filter((route) => !!route.label); // Filter out the routes without labels
+  routes = this._router.config
+    .map((route) => {
+      const data = route.data || {};
+      return {
+        path: route.path,
+        label: data['label'],
+      };
+    })
+    .filter((route) => !!route.label); // Filter out the routes without labels
 
   toggleTheme() {
     this.onToggleTheme.emit();

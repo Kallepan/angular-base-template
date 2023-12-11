@@ -35,11 +35,19 @@ export class MainComponent {
   constructor() {
     effect(() => {
       if (this.isDark()) {
-        this._overlayContainer.getContainerElement().classList.add('theme-dark');
-        this._overlayContainer.getContainerElement().classList.remove('theme-light');
+        this._overlayContainer
+          .getContainerElement()
+          .classList.add('theme-dark');
+        this._overlayContainer
+          .getContainerElement()
+          .classList.remove('theme-light');
       } else {
-        this._overlayContainer.getContainerElement().classList.add('theme-light');
-        this._overlayContainer.getContainerElement().classList.remove('theme-dark');
+        this._overlayContainer
+          .getContainerElement()
+          .classList.add('theme-light');
+        this._overlayContainer
+          .getContainerElement()
+          .classList.remove('theme-dark');
       }
     });
   }

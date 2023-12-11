@@ -1,11 +1,9 @@
 import { TestBed, fakeAsync } from '@angular/core/testing';
-import { AppComponent } from './app.component';
 import { provideNoopAnimations } from '@angular/platform-browser/animations';
 import { provideRouter } from '@angular/router';
-
+import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
-
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [AppComponent],
@@ -18,7 +16,7 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   }));
 
-  it("should contain app-main", () => {
+  it('should contain app-main', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;

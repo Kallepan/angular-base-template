@@ -1,7 +1,10 @@
 import { TestBed } from '@angular/core/testing';
 
 import { AuthService } from './auth.service';
-import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
+import {
+  HttpTestingController,
+  provideHttpClientTesting,
+} from '@angular/common/http/testing';
 import { AuthObject, CookieAuthResponse } from '../interfaces/auth_object';
 import { provideHttpClient } from '@angular/common/http';
 import { constants } from '../constants/constants';
@@ -14,7 +17,10 @@ describe('AuthService', () => {
   let notificationService: jasmine.SpyObj<NotificationService>;
 
   beforeEach(() => {
-    notificationService = jasmine.createSpyObj<NotificationService>('NotificationService', ['warnMessage', 'infoMessage']);
+    notificationService = jasmine.createSpyObj<NotificationService>(
+      'NotificationService',
+      ['warnMessage', 'infoMessage'],
+    );
   });
 
   beforeEach(() => {
@@ -24,7 +30,7 @@ describe('AuthService', () => {
         provideHttpClient(),
         provideHttpClientTesting(),
         { provide: NotificationService, useValue: notificationService },
-      ]
+      ],
     });
     service = TestBed.inject(AuthService);
     httpTestingController = TestBed.inject(HttpTestingController);
@@ -62,7 +68,9 @@ describe('AuthService', () => {
       featureFlags: ['test1', 'test2'],
     } as AuthObject);
 
-    expect(notificationService.infoMessage).toHaveBeenCalledWith('Welcome back, test');
+    expect(notificationService.infoMessage).toHaveBeenCalledWith(
+      'Welcome back, test',
+    );
   });
 
   it('should handle failed verifyLogin', () => {
@@ -106,7 +114,9 @@ describe('AuthService', () => {
       expiresAt: new Date('2021-01-01T00:00:00.000Z'),
     } as AuthObject);
 
-    expect(notificationService.infoMessage).toHaveBeenCalledWith('Welcome back, test');
+    expect(notificationService.infoMessage).toHaveBeenCalledWith(
+      'Welcome back, test',
+    );
   });
 
   it('should handle failed login', () => {

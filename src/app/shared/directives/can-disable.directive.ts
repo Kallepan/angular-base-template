@@ -1,7 +1,7 @@
 import { Directive, HostBinding, HostListener, Input } from '@angular/core';
 @Directive({
   selector: '[canDisable]',
-  standalone: true
+  standalone: true,
 })
 export class CanDisableDirective {
   @Input()

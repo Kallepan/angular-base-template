@@ -1,7 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  Component
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CanAppearanceDirective } from '@app/shared/directives/can-appearance.directive';
 import { CanDisableDirective } from '@app/shared/directives/can-disable.directive';
 
@@ -18,14 +15,12 @@ import { CanDisableDirective } from '@app/shared/directives/can-disable.directiv
   hostDirectives: [
     {
       directive: CanDisableDirective,
-      inputs: ['disabled']
+      inputs: ['disabled'],
     },
     {
       directive: CanAppearanceDirective,
-      inputs: ['appearance: type']
-    }
-  ]
+      inputs: ['appearance: type'],
+    },
+  ],
 })
-export class ButtonComponent {
-
-}
+export class ButtonComponent {}

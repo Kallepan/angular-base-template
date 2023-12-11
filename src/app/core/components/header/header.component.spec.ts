@@ -16,13 +16,8 @@ describe('HeaderComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [
-        HeaderComponent,
-        RouterTestingModule,
-      ],
-      providers: [
-        Router,
-      ]
+      imports: [HeaderComponent, RouterTestingModule],
+      providers: [Router],
     });
     fixture = TestBed.createComponent(HeaderComponent);
     component = fixture.componentInstance;
@@ -37,7 +32,7 @@ describe('HeaderComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('title should be visible', () => { 
+  it('title should be visible', () => {
     const node = fixture.debugElement.query(By.css('.header-title'));
     expect(node.nativeElement.textContent).toContain(component.title);
   });
@@ -46,8 +41,10 @@ describe('HeaderComponent', () => {
     // Fetch by 'a' tag
     const nodes = fixture.debugElement.nativeElement.querySelectorAll('a');
 
-    const router = TestBed.inject(Router);
-    expect(nodes.length).toEqual(router.config.filter(r => !!r.data).map(r => r.data!).length);
+    // Check if the number of routes are equal to the number of routes with data
+    expect(nodes.length).toEqual(
+      router.config.filter((r) => !!r.data).map((r) => r.data!).length,
+    );
   });
 
   it('should emit open sidenav event', () => {

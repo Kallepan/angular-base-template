@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { constants } from '@app/core/constants/constants';
 
-
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',

@@ -1,9 +1,5 @@
 import { CommonModule } from '@angular/common';
-import {
-  ChangeDetectionStrategy,
-  Component,
-  Input
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -19,11 +15,12 @@ import { MatInputModule } from '@angular/material/input';
     ReactiveFormsModule,
     MatInputModule,
     MatFormFieldModule,
-  ]
+  ],
 })
 export class SearchBarComponent {
   @Input() control: FormControl;
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   updateValue(event: any) {
     this.control.setValue(event.value);
   }
