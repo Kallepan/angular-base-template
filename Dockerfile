@@ -1,3 +1,7 @@
+#
+# This is an example Dockerfile for a simple Angular app.
+#
+
 ### STAGE 1: Build ###
 FROM node:18-alpine as builder
 

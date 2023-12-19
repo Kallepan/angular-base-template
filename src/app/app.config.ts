@@ -1,4 +1,8 @@
-import { provideHttpClient, withInterceptors } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withFetch,
+  withInterceptors,
+} from '@angular/common/http';
 import { ApplicationConfig } from '@angular/core';
 import {
   provideClientHydration,
@@ -21,6 +25,7 @@ export const appConfig: ApplicationConfig = {
       }),
     ),
     provideHttpClient(
+      withFetch(),
       withInterceptors([httpErrorInterceptor, httpAuthInterceptor]),
     ),
     NotificationService,

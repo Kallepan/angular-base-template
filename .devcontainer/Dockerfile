@@ -1,10 +1,7 @@
 FROM mcr.microsoft.com/devcontainers/typescript-node:1-20-bullseye
 
-# Install angular
-RUN npm install -g @angular/cli@17.0.1
-
 # Install node modules
-ARG NODE_MODULES="eslint typescript"
+ARG NODE_MODULES="eslint prettier @angular/cli"
 RUN npm install -g ${NODE_MODULES} \
     && npm cache clean --force > /dev/null 2>&1
 
