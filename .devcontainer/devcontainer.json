@@ -29,14 +29,17 @@
       ],
       "settings": {
         "editor.defaultFormatter": "esbenp.prettier-vscode",
-
         "editor.formatOnSave": true,
-
+        "editor.codeActionsOnSave": {
+          "source.fixAll": true
+        },
         "[javascript]": {
-          "source.organizeImports": true
+          "editor.maxTokenizationLineLength": 2500,
+          "editor.formatOnSave": true
         },
         "[typescript]": {
-          "source.organizeImports": true
+          "editor.maxTokenizationLineLength": 2500,
+          "editor.formatOnSave": true
         }
       }
     }
